@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elemental Chaos - Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .hand {
+            margin-top: 20px;
+        }
+        .card {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .discard {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+        .card-display {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+    }
+        .card {
+            display: inline-block;
+            border: 2px solid #444;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #f4f4f4;
+            font-weight: bold;
+            min-width: 120px;
+            margin-top: 5px;
+    }
+         .board h2 {
+            margin-bottom: 10px;
+    }
+</style>
+
+    </style>
+</head>
+<body>
+
+    <h1>Elemental Chaos</h1>
+
+    {% if message %}
+    <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <div class="discard">
+        <p>Top of Discard Pile:</p>
+        <p>{{ discard }}</p>
+    </div>
+
+    <h2>Your Hand</h2>
+    <div class="hand">
+        {% for card in player.hand %}
+            <a class="card" href="{{ url_for('play_card', card_index=loop.index0) }}">{{ card }}</a>
+        {% endfor %}
+    </div>
+
+    <div>
+        <a class="button" href="{{ url_for('draw_card') }}">Draw Card</a>
+        <a class="button" href="{{ url_for('new_game') }}">Start New Game</a>
+    </div>
+
+    <div class="board">
+    <h2>Board Status</h2>
+
+    <div class="card-display">
+        <div>
+            <strong>Top of Discard Pile:</strong><br>
+            <div class="card">{{ discard }}</div>
+        </div>
+
+        <div>
+            <strong>Last Card Played by You:</strong><br>
+            <div class="card">
+                {{ last_played["You"] if last_played["You"] else "None yet" }}
+            </div>
+        </div>
+
+        <div>
+            <strong>Last Card Played by CPU:</strong><br>
+            <div class="card">
+                {{ last_played["CPU"] if last_played["CPU"] else "None yet" }}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choose Element</title>
+    <style>
+        .element-button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 15px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .Fire { background-color: #ff6666; }
+        .Water { background-color: #66ccff; }
+        .Earth { background-color: #99cc66; }
+        .Air { background-color: #ccccff; }
+    </style>
+</head>
+<body>
+    <h2>You played: {{ card }}</h2>
+    <p>Choose the element to continue the game with:</p>
+    <div>
+        <a href="{{ url_for('choose_element', element='Fire') }}">
+            <button class="element-button Fire">🔥 Fire</button>
+        </a>
+        <a href="{{ url_for('choose_element', element='Water') }}">
+            <button class="element-button Water">💧 Water</button>
+        </a>
+        <a href="{{ url_for('choose_element', element='Earth') }}">
+            <button class="element-button Earth">🌱 Earth</button>
+        </a>
+        <a href="{{ url_for('choose_element', element='Air') }}">
+            <button class="element-button Air">💨 Air</button>
+        </a>
+    </div>
+</body>
+</html>
