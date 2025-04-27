@@ -1,0 +1,64 @@
+
+
+**Elemental Chaos** is a dynamic 1v1 card game where players battle using elemental forces and special abilities!  
+The project is built with **Python** and **Flask**, with simple web interface for gameplay interaction.
+
+> 🎯 This project is a **collaborative effort** between the user and **ChatGPT**, combining human creativity with AI assistance.
+
+---
+
+## 🚀 Project Overview
+
+- **Elemental Chaos** simulates an exciting turn-based card battle.
+- Each player has a hand of cards belonging to the four elements: **Fire**, **Water**, **Earth**, and **Air**.
+- Special action and wild cards introduce chaotic effects, shifting the strategy constantly.
+- The objective: be the first to play all your cards or outlast your opponent.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Python 3**
+- **Flask** (Web framework)
+- **HTML5** (Templates)
+- **CSS3** (Basic styling)
+
+---
+
+## 🎮 Main Features
+
+- 1v1 match: **Human vs CPU**
+- **Basic cards** (elements + numbers) and **special cards** (wild & action cards)
+- Special effects: **Flood**, **Tornado**, **Earthquake**, **Firestorm**, **Chaos Orb**, **Elemental Swap**, and **Shields**.
+- **Declared elements** after playing wild/action cards to control the next moves.
+- Full deck management: **draw**, **play**, **discard**, **shuffle**.
+- Simple web interface to interact with the game (via `/game` page).
+- Game automatically detects win conditions and declares the winner.
+- Designed for quick iteration and easy future expansion.
+
+---
+
+## 📖 Future Enhancements (Planned)
+
+- Improved UI and animations.
+- Multiplayer (online player vs player).
+- Score tracking and stats.
+- Expanded deck with new elemental types or combos.
+
+---
+
+## 🤝 Collaboration
+
+This project was developed collaboratively between **[User: francoriccobelli](https://github.com/francoriccobelli)** and **ChatGPT**.  
+It showcases the power of human creativity + AI support to build real-world apps!
+
+---
+
+## 📸 Screenshots
+
+*(Coming soon!)*
+
+---
+
+## 📂 Project Structure
+
