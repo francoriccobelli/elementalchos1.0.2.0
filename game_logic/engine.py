@@ -101,6 +101,8 @@ class GameEngine:
         }
         self.declared_element = None
 
+        self.winner_name = None  # 🛠️ ADD THIS properly inside __init__
+
         # Deal 7 cards to each player
         for player in self.players:
             for _ in range(7):
@@ -191,6 +193,7 @@ class GameEngine:
                 self.last_played_cards[player.name] = played_card
                 # Apply special effect
                 self.apply_special_effect(played_card)
+                self.check_for_winner()
                 played = True
                 break
 
@@ -228,8 +231,9 @@ class GameEngine:
         # Check win
         if player.hand_size() == 0:
             print(f"\n🎉 {player.name} WINS! 🎉")
-            self.game_over = True #set flag
-            return True  # Game over
+            self.game_over = True
+            self.winner_name = player.name  # 🛠️ SET THE WINNER
+            return True
 
         return False  # Continue game
 
@@ -287,5 +291,14 @@ class GameEngine:
             chosen_element = random.choice(['Fire', 'Water', 'Earth', 'Air'])
             self.declared_element = chosen_element
             print(f"{self.current_player().name} declares next element to be {chosen_element}!")
+
+    def check_for_winner(self):
+        for player in self.players:
+            if player.hand_size() == 0:
+                print(f"🎉 {player.name} wins!")
+                self.game_over = True
+                self.winner_name = player.name  # 🛠️ SET THE WINNER
+                return player.name
+        return None
 
 
